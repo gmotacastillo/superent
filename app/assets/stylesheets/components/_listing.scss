@@ -1,0 +1,10 @@
+.listings-container{
+  height: 400px;
+  background: rgb(117, 117, 117);
+  overflow-y: auto;
+}
+
+.listing-container{
+  display: flex;
+  flex-direction: row;
+}
