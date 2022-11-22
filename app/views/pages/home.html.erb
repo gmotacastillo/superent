@@ -3,17 +3,14 @@
   <%= image_tag "ferrari.png", class:"img" %>
   <div class="footer-container">
     <div class="footer-elements-container">
-
-
-      <%# <ul>
-        <li><p>Choose a Location</p><input type="text" name="" id="" placeholder="Barcelona"></li>
-        <li><p>Pick-up Date</p><input type="date"></li>
-        <li><p>Return Date</p><input type="date"></li>
-        <li><button>Search</button></li>
-      </ul> %>
+    <%= form_with url: cars_path, method: :get, remote: true do  |f| %>
+    <%= f.text_field :location %>
+    <%= f.date_field :start_date %>
+    <%= f.date_field :end_date %>
+    <%= f.submit %>
+    <% end %>
     </div>
   </div>
-  <%# <p>Find me in app/views/pages/home.html.erb</p> %>
   <%# <%= link_to "Sign in", new_user_session_path %>
   <%# <%= link_to "Log out", destroy_user_session_path %>
 </div>
