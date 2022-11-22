@@ -1,21 +1,23 @@
+// main container
 .listings-container{
   height: 80vh;
   width: auto;
   background: black;
   overflow-y: auto;
+  padding-left: 2rem;
 }
 
 .listing-container{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  border: white 2px solid;
-  background: rgb(147, 166, 173);
+  background: linear-gradient(90deg, #636363, #63636300);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 1rem;
   margin: 1rem 0rem;
 }
 
+// main container elements
 .listings-container img{
   width: 300px;
   height: 200px;
@@ -24,7 +26,42 @@
 
 .listing-container .car-info{
   width: 600px;
-  margin-left: 3rem;
+  margin-left: 1rem;
   background: #B9B9B9;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+// car info elements top
+.listing-container .car-info-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 3rem 0rem 1rem;
+}
+
+.description p{
+  padding-top: 0.5rem;
+  width: 350px;
+  font-size: small;
+}
+
+// car info elements bottom
+.listing-container .car-info-bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.listing-container .book-btn {
+  background: linear-gradient(90deg,#EEB60A, #FFE491);
+}
+.listing-container .book-btn a:link {
+  text-decoration: none;
+}
+
+.car-info-bottom .start-date, .end-date {
+  display: flex;
+  flex-direction: column;
 }
