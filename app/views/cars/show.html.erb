@@ -1,0 +1,11 @@
+<h2><%= @car.model %></h2>
+<p><%= @car.price %></p>
+<p><%= @car.start_date %></p>
+<p><%= @car.end_date %></p>
+
+<%= link_to "Edit car", edit_car_path %>
+<%= link_to "Delete",
+  car_path(@car),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+<%= link_to "Go back", cars_path %>
