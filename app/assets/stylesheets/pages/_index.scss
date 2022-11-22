@@ -3,18 +3,8 @@
 @import "home";
 @import "show";
 
-// .cars-main-container {
-//     display: flex;
-//     background-color: gray;
-// }
-
-.filter-container {
-    width: 25%;
-    background-color: blue;
-
+.cars-main-container {
+    display: flex;
+    background-color: rgb(255, 74, 74);
 }
 
-.listings-container {
-    overflow-y: auto;
-
-}
