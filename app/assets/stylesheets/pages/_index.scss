@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 
 @import "home";
+@import "show";
 
 .cars-main-container {
     display: flex;
@@ -10,11 +11,10 @@
 .filter-container {
     width: 25%;
     background-color: blue;
-    
+
 }
 
 .listings-container {
     overflow-y: auto;
-    
-}
 
+}
