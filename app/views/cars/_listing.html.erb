@@ -1,0 +1,8 @@
+<div class="listings-container">
+    <% @cars.each do |car| %>
+      <div class ="listing-container">
+        <img src="https://via.placeholder.com/140x100" alt="">
+        <%= link_to car.model, car_path(car) %>
+      </div>
+    <% end %>
+</div>
