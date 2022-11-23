@@ -25,6 +25,9 @@
 
   <div class="navbar-login-container">
   <% if user_signed_in? %>
+    <button class="create-btn">
+    <%= link_to "Create listing", new_car_path%>
+    </button>
     <button class="log-in-btn">
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </button>
