@@ -45,7 +45,7 @@ left: 0;
 
 .footer-elements-container{
   width: auto;
-  height: 8rem;
+  height: 7rem;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -56,15 +56,24 @@ left: 0;
   filter: drop-shadow(16px 16px 10px black);
 }
 
+.footer-elements-container form{
+  display: flex;
+  padding: 20px;
+}
+
 .footer-container p{
   color: white;
 }
 
-.footer-elements-container ul{
+.info-container {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  list-style-type: none;
-  gap: 5rem;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.search-btn {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-top: 48px;
 }
