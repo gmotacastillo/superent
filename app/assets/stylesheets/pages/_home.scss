@@ -9,8 +9,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
-  height: 94vh;
+  align-content: flex-end;
+  height: 87vh;
+  align-items: flex-end;
   position: relative;
 }
 
