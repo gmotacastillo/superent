@@ -1,8 +1,10 @@
 
 <div class="nav-container">
-  <div class="navbar-logo-container"> 
-     <h1 class="navbar-logo-name">SUPERENT</h2>
-  </div>  
+  <div class="navbar-logo-container">
+     <%= link_to root_path do %>
+      <h1 class="navbar-logo-name">SUPERENT</h1>
+     <% end %>
+  </div>
 
   <div class="navbar-menu-login-container">
 
@@ -20,11 +22,11 @@
       </ul>
   </div>
 
-  <div class="navbar-login-container">
-    <button class="log-in-btn">
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-    </button> 
-  </div>
-   
+    <div class="navbar-login-container">
+      <button class="log-in-btn">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </button>
+    </div>
+
   </div>
 </div>
