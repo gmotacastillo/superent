@@ -1,36 +1,48 @@
 <div class="big-container">
-<!--div below is for the left half of the screen (car info)-->
-<div class="left-car-info-container">
-  <p>Your reservation</p>
-  <p><%= @car.model %></p>
-  <p>$<%= @car.price %></p>
-  <p>Available from: <%= @car.start_date %></p>
-  <p>To: <%= @car.end_date %></p>
-<div>
-carpic
-</div>
-  <%= link_to "Edit car", edit_car_path, class: "btn-show-car-page" %>
-  <%= link_to "Delete",
-  car_path(@car),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-show-car-page"%>
-  <%= link_to "Go back", cars_path, class: "btn-show-car-page" %>
+  <!--div below is for the left half of the screen (car info)-->
+  <div class="left-car-info-container">
 
-</div>
+      <p class="title-car-show-page" >Your reservation</p><br>
+       <div class="car-picture-show-page-infos">
+      carpic
+       </div><br>
+      <p class="text-car-show"><%= @car.model %></p>
+      <p class="text-car-show">$<%= @car.price %></p>
+      <p class="text-car-show">Available from: <%= @car.start_date %></p>
+
+      <p class="text-car-show">To: <%= @car.end_date %></p>
+      <br>
+
+      <!--edit button is for later-->
+      <%#= link_to "Edit car", edit_car_path, class: "btn-show-car-page" %>
+      <!--delete button is for later-->
+      <%#= link_to "Delete",
+      car_path(@car),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-show-car-page"%>
+      <%= link_to "Go back", cars_path, class: "btn btn-show-car-page" %>
+
+  </div>
+
+
+
+
 <!--div below is for the right half of the screen (booking form)-->
 <!--this form was just copied and pasted from the bookings/new, and changed to a form_with-->
-<div class="right-car-booking-container">
   <% if user_signed_in? %>
-  <%= form_with url: new_car_booking_path(@car), remote: true do |f| %>
-    <%= f.date_field :start_date %>
-    <%= f.date_field :end_date %>
-    <%#= f.check_box :status %>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
+   <div class="right-car-booking-container">
+        <br>
+        <p class="title-car-show-page">Book now</p><br>
+        <%= form_with url: new_car_booking_path(@car), remote: true do |f| %>
+        <p class="text-car-show">Startdate:</p><br>
+        <%= f.date_field :start_date %> <br>
+        <br>
+        <p class="text-car-show">Enddate:</p><br>
+        <%= f.date_field :end_date %> <br>
+        <br>
+        <br>
+        <%= f.submit "Book this car", class: "btn btn-show-car-page" %>
+        <% end %>
+        </div>
+    </div>
   <% end %>
-  <% else %>
-   <button class="log-in-btn">
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-    </button>
-  <% end %>
-
-</div>
 </div>

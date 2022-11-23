@@ -1,7 +1,7 @@
 .big-container {
-  background-color: grey;
+  background-color: rgb(70, 70, 70);
   color: white;
-  padding: 25px;
+  padding: 20px;
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -9,17 +9,23 @@
 }
 // the container for the left half of the screen with the infos
 .left-car-info-container {
-  background-color: rgb(255, 111, 0);
+  background-color: rgb(0, 0, 0);
+
   flex-grow: 1;
   margin-right: 10px;
+  flex-direction: row;
+  justify-content: center;
+  padding: 100px;
 
 
 }
 // the container for the right half of the screen with the booking form
 .right-car-booking-container {
-  background-color: rgb(16, 103, 129);
+  background-color: rgb(0, 0, 0);
   flex-grow: 1;
   margin-left: 10px;
+  flex-direction: row;
+  padding: 100px;
 
 
 }
@@ -29,10 +35,37 @@
   color: black;
   border-radius: 5px;
   text-decoration: none;
+  width: 150px;
+
 }
 
 .car-picture-show-page-infos {
-  height: 50px;
-  width: 50px;
-  background-color: aquamarine;
+
+  color: gray;
+  height: 160px;
+  width: 160px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.title-car-show-page {
+  font-family:'Russo One', sans-serif;
+  font-size: 25px;
+}
+
+.text-car-show {
+  font-family:'Russo One', sans-serif;
+  font-size: 17px;
+  font-weight:lighter
+
+
+}
+
+.car-show-booking-form-container {
+  display: flex;
+  flex-direction: row;
+
+
+
 }
