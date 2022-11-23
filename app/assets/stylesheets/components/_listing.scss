@@ -4,7 +4,7 @@
   width: auto;
   background: black;
   overflow-y: auto;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .listing-container{
@@ -13,24 +13,31 @@
   justify-content: flex-start;
   background: linear-gradient(90deg, #636363, #63636300);
   border-radius: 20px;
-  padding: 1rem;
-  margin: 1rem 0rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 1rem 1rem;
+  box-shadow: rgba(255, 255, 255, 0.16) 0px 10px 36px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px;
 }
 
 // main container elements
 .listings-container img{
-  width: 300px;
-  height: 200px;
+  width: 500px;
+  height: 250px;
   border-radius: 20px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .listing-container .car-info{
-  width: 600px;
-  margin-left: 1rem;
   background: #B9B9B9;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  margin-right: 1rem;
+  width: 800px;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 // car info elements top
@@ -38,13 +45,20 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0px 3rem 0rem 1rem;
 }
 
 .description p{
   padding-top: 0.5rem;
   width: 350px;
   font-size: small;
+}
+
+// price
+
+.price{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 // car info elements bottom
@@ -54,14 +68,36 @@
   justify-content: space-between;
 }
 
-.listing-container .book-btn {
-  background: linear-gradient(90deg,#EEB60A, #FFE491);
-}
-.listing-container .book-btn a:link {
-  text-decoration: none;
-}
-
-.car-info-bottom .start-date, .end-date {
+.car-info-bottom > .start-date, .end-date {
   display: flex;
   flex-direction: column;
+}
+
+.car-info-bottom > .start-date p, .end-date p{
+  font-size: small;
+  font-weight: 400;
+}
+
+.listing-container .book-btn {
+  background: linear-gradient(90deg,#EEB60A, #FFE491);
+  height: 3rem;
+  width: 8rem;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.listing-container a:link{
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a:visited{
+  color: black;
 }
