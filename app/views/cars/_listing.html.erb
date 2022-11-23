@@ -1,9 +1,33 @@
 <div class="listings-container">
     <% @cars.each do |car| %>
       <div class ="listing-container">
-        <img src="https://via.placeholder.com/140x100" alt="">
-        <div class="car-info"car><%= car.model %></div>
-        <%# <%= link_to car.model, car_path(car) %>
+        <img src="https://images.squarespace-cdn.com/content/v1/5ac3c4f3a2772c77b7bf6470/1555081097471-4RUXS0SAFTG7JRCXT48P/e7ddd9d5-00fb-4246-9c28-32c892f484b0.JPG?format=1000w" alt="">
+          <div class="car-info-top"></div>
+        <div class="car-info"car>
+          <div class="car-info-top">
+            <div class="description">
+              <%= car.model %>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae fugit neque perferendis dolore, amet inventore voluptate blanditiis error harum debitis, tempore dolor, eum vero? Laudantium cum ex aut illum tempore!</p>
+            </div>
+            <div class="price">
+              <p>Price</p>
+              <%= car.price %>
+            </div>
+          </div>
+          <div class="car-info-bottom">
+            <div class="start-date">
+              <p>From<p>
+              <%= car.start_date %>
+            </div>
+            <div class="end-date">
+              <p>To</p>
+              <%= car.end_date %>
+            </div>
+            <div class="book-btn">
+              <%= link_to "Book", car_path(car) %>
+            </div>
+          </div>
+        </div>
       </div>
     <% end %>
 </div>
