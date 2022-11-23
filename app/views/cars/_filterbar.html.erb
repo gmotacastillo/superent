@@ -1,0 +1,33 @@
+<h4>Filter</h4>
+
+<div class="filter-div">
+
+  <div class=“footer-container”>
+    <div class=“footer-elements-container”>
+    <%= form_with url: cars_path, method: :get, remote: true do  |f| %>
+      <div class="location-container">
+      <h6>Location</h6>
+      <%= f.text_field :location, placeholder: "  Please choose a city", class: 'location-text-field' %>
+    </div>
+
+    <div class="availability-container">
+      <h6>Availability</h6>
+      <p>From</p>
+      <%= f.date_field :start_date, class: 'date-field' %>
+      <p>To</p>
+      <%= f.date_field :end_date, class: 'date-field' %>
+    </div>
+
+    <div class="price-container">
+      <p>Price / Day</p>
+      <div class="text-field-container">
+          <%= f.text_field :start_price, placeholder: " Start price", class: 'price-text-field' %>
+          <%= f.text_field :end_price, placeholder: " End price", class: 'price-text-field' %>
+      </div>
+      <%= f.submit "Filter", class: 'button-field' %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>

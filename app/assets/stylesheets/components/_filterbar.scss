@@ -1,0 +1,92 @@
+.filter-container h4 {
+    color: white;
+    padding-left: 5%;
+
+}
+
+.filter-container .location-text-field {
+    border-radius: 10px;
+    border: none;
+    background-color: #D8D8D8;
+}
+
+
+.filter-container .date-field {
+    border-radius: 10px;
+    border: none;
+    background-color: #D8D8D8;
+}
+
+.filter-container .price-text-field {
+    border-radius: 10px;
+    border: none;
+    margin-right: 3px;
+    background-color: #D8D8D8;
+}
+
+.filter-container .button-field {
+    border-radius:10px;
+    background-color:#F4C73A;
+    width: 100px;
+    font-weight: bold;
+    border:none;
+}
+
+.filter-container .filter-div {
+    height: 340px;
+    width: 300px;
+    margin-left:10px;
+    background-color: grey;
+    padding:15px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.filter-container .text-field-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 5%;
+}
+
+.filter-container .text-field-container input[type="text"] {
+    width: 100px;
+}
+
+.filter-container {
+    height: 400px;
+    width: 25%;
+}
+.filter-container .text-field-container input[type="placeholder"]{
+    color:white;
+}
+
+
+.filter-container .form-field {
+    border-radius: 10px;
+}
+
+.filter-container .location-container {
+    padding-bottom: 5%;
+}
+
+.filter-container .location-container h6 {
+    color: white;
+}
+
+.filter-container .availability-container {
+    padding-bottom: 5%;
+}
+
+.filter-container .availability-container h6 {
+    color: white;
+}
+
+.filter-container .price-container p {
+    margin-bottom: -1px;
+    color: white;
+}
+
+.filter-container .availability-container p {
+    margin-bottom: -2px;
+    color: white;
+}

@@ -1,7 +1,10 @@
 
 <div class="nav-container">
   <div class="navbar-logo-container">
-     <h1 class="navbar-logo-name">SUPERENT</h2>
+     <%= link_to root_path do %>
+      <h1 class="navbar-logo-name">SUPERENT</h1>
+     <% end %>
+
   </div>
 
   <div class="navbar-menu-login-container">
@@ -22,6 +25,11 @@
 
   <div class="navbar-login-container">
   <% if user_signed_in? %>
+    <div class="create-btn">
+      <%= link_to new_car_path do %>
+      <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
     <button class="log-in-btn">
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </button>

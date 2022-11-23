@@ -15,7 +15,7 @@
   border-radius: 20px;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin: 1rem 1rem;
+  margin: 0rem 1rem 1rem 0rem;
   box-shadow: rgba(255, 255, 255, 0.16) 0px 10px 36px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px;
 }
 
@@ -100,4 +100,8 @@
 
 a:visited{
   color: black;
+}
+
+h4{
+  padding-left: 1rem;
 }
