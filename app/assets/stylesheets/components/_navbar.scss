@@ -50,8 +50,28 @@
   gap:16px;
 }
 
-.create-btn{
-  background-color: green;
+.navbar-login-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.create-btn, i{
+  display: flex;
   text-decoration: none;
   color: white;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  margin-right: 2rem;
+}
+
+.create-btn i{
+  padding: 0.8rem;
+  border: white 1px solid;
+  border-radius: 50%;
+}
+
+.create-btn i:hover{
+  background-color: white;
+  color: green;
 }
