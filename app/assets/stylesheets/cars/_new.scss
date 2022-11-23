@@ -1,8 +1,17 @@
-.new-car-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  height: 96vh;
-  position: relative;
+@import "../components/index";
+
+body {
+  background: black;
+  color: white;
+  padding: 15px;
+}
+
+#center-title {
+  align-items: center;
+}
+
+.btn-create {
+  background-color: #F4C73A;
+    color: black;
+    border-radius: 5px;
 }
