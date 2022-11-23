@@ -8,8 +8,16 @@
 
 require "faker"
 
-user = User.create!(email: "info@supereqwnt.com", password: "123456", password_confirmation: "123456", first_name: "Juan", last_name: "JuanJuan")
+user = User.last
 
-6.times do
-  Car.create!(model: Faker::Vehicle.manufacture, price: 100, start_date: "20/12/2022", end_date: "02/02/2023", user_id: user.id)
+2.times do
+  Car.create!(model: Faker::Vehicle.manufacture, price: 100, start_date: "28/11/2022", end_date: "02/02/2023", user_id: user.id, location: "Amsterdam", description: Faker::Vehicle.standard_specs)
+end
+
+2.times do
+  Car.create!(model: Faker::Vehicle.manufacture, price: 150, start_date: "01/01/2023", end_date: "02/04/2023", user_id: user.id, location: "London", description: Faker::Vehicle.standard_specs)
+end
+
+2.times do
+  Car.create!(model: Faker::Vehicle.manufacture, price: 150, start_date: "01/01/2023", end_date: "02/04/2023", user_id: user.id, location: "Barcelona", description: Faker::Vehicle.standard_specs)
 end
