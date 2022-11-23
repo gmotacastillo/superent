@@ -17,12 +17,12 @@
       <p>To</p>
       <%= f.date_field :end_date, class: 'date-field' %>
     </div>
-    
+
     <div class="price-container">
       <p>Price / Day</p>
       <div class="text-field-container">
-          <%= f.text_field :location, placeholder: " Start price", class: 'price-text-field' %>
-          <%= f.text_field :location, placeholder: " End price", class: 'price-text-field' %>
+          <%= f.text_field :start_price, placeholder: " Start price", class: 'price-text-field' %>
+          <%= f.text_field :end_price, placeholder: " End price", class: 'price-text-field' %>
       </div>
       <%= f.submit "Filter", class: 'button-field' %>
       <% end %>
@@ -31,4 +31,3 @@
   </div>
 
 </div>
-

@@ -1,13 +1,24 @@
 
 <div class="layout-container">
-  <%= image_tag "ferrari.png", class:"img" %>
+    <%= image_tag "ferrari.png", class:"img" %>
   <div class="footer-container">
     <div class="footer-elements-container">
     <%= form_with url: cars_path, method: :get, remote: true do  |f| %>
-    <%= f.text_field :location %>
-    <%= f.date_field :start_date %>
-    <%= f.date_field :end_date %>
-    <%= f.submit %>
+      <div class="info-container">
+        <p>Location:</p>
+        <%= f.text_field :location %>
+      </div>
+      <div class="info-container">
+        <p>From:</p>
+        <%= f.date_field :start_date %>
+      </div>
+      <div class="info-container">
+        <p>To:</p>
+        <%= f.date_field :end_date%>
+      </div>
+      <div class="search-btn">
+        <%= f.submit "Find your supercar"%>
+      </div>
     <% end %>
     </div>
   </div>
