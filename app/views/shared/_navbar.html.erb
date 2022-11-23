@@ -1,8 +1,11 @@
 
 <div class="nav-container">
-  <div class="navbar-logo-container"> 
-     <h1 class="navbar-logo-name">SUPERENT</h2>
-  </div>  
+  <div class="navbar-logo-container">
+     <%= link_to root_path do %>
+      <h1 class="navbar-logo-name">SUPERENT</h1>
+     <% end %>
+
+  </div>
 
   <div class="navbar-menu-login-container">
 
@@ -21,10 +24,19 @@
   </div>
 
   <div class="navbar-login-container">
+  <% if user_signed_in? %>
+    <button class="create-btn">
+    <%= link_to "Create listing", new_car_path%>
+    </button>
+    <button class="log-in-btn">
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    </button>
+  <% else %>
     <button class="log-in-btn">
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-    </button> 
+    </button>
+  <% end %>
   </div>
-   
+
   </div>
 </div>

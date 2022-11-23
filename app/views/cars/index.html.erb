@@ -1,35 +1,10 @@
 <div class="cars-main-container">
-  
+
   <div class="filter-container">
     <%= render "filterbar"%>
   </div>
 
   <div class="listings-container">
-    <h2>LISTINGS GOES HERE</h2>
-      <% @cars.each do |car| %>
-        <div><%= link_to car.model, car_path(car) %></div>
-      <% end %>
+    <%= render "listing" %>
   </div>
-  
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

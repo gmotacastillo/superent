@@ -1,0 +1,11 @@
+<h1>Create a new listing</h1>
+<br>
+<%= simple_form_for [@user, @car, @booking], data:{turbo: false} do |f| %>
+  <%= f.input :model%>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :status %>
+  <%= f.submit "Submit booking", class: "btn btn-primary" %>
+<% end %>
+
+<!--we transfered this new booking form to the car/showpage as it is in the design from robby>

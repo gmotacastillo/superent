@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 // Import your components CSS files here.
+
 @import "alert";
 @import "avatar";
 @import "form_legend_clear";
@@ -74,9 +74,11 @@ left: 0;
   list-style-type: none;
   gap: 5rem;
 }
-=======
+
 // @import "alert";
 // @import "avatar";
 // @import "form_legend_clear";
 // @import "navbar";
->>>>>>> 72a794532a7248fda98933eacbc47ec22e2a5da8
+
+@import "listing";
+@import "form";

@@ -1,0 +1,40 @@
+.big-container {
+  background-color: grey;
+  color: white;
+  padding: 25px;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+}
+// the container for the left half of the screen with the infos
+.left-car-info-container {
+  background-color: rgb(255, 111, 0);
+  flex-grow: 1;
+  margin-right: 10px;
+
+
+}
+// the container for the right half of the screen with the booking form
+.right-car-booking-container {
+  background-color: rgb(16, 103, 129);
+  flex-grow: 1;
+  margin-left: 10px;
+
+
+}
+
+.btn-show-car-page {
+  background-color: #F4C73A;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.car-picture-show-page-infos {
+  height: 50px;
+  width: 50px;
+  background-color: aquamarine;
+
+
+}

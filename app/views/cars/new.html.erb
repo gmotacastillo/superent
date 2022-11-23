@@ -1,7 +1,32 @@
-<%= simple_form_for @car do |f| %>
-  <%= f.input :model %>
-  <%= f.input :price %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container mr-3 vh-100">
+  <h1 class="text-center"><strong>CREATE A NEW LISTING</strong></h1>
+  <br>
+  <%= simple_form_for [@car], data:{turbo: false} do |f| %>
+    <div class="row">
+      <div class="col-sm mb-3">
+      <h2>Car title</h2>
+        <%= f.input :model, label: false%>
+        <br>
+        <h2>When is your car available?</h2>
+        <br>
+        <h3>from</h3>
+        <%= f.input :start_date, label: false %>
+        <br>
+        <h3>to</h3>
+        <%= f.input :end_date, label: false %>
+        <br>
+        <br>
+        <h2>How much does the rental cost?</h2>
+        <br>
+        <%= f.input :price, label: false %>
+        <%= f.submit "Create", class: "btn btn-create" %>
+      </div>
+      <div class="col-sm">
+      <h3>Description</h3>
+        <%= f.input :description, label: false, :input_html => {:style=> 'height: 250px'} %>
+      <h3>Add an image</h3>
+        <%= f.input :image_url, label: false, :input_html => {:style=> 'height: 250px'} %>
+      </div>
+    <div>
+  <% end %>
+</div>
