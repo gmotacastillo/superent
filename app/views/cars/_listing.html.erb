@@ -1,20 +1,28 @@
 <h4>All Listings</h4>
 
 <div class="listings-container">
-    <% @cars.each do |car| %>
-      <div class ="listing-container">
-        <% if car.photo.present? %>
-          <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-        <% else %>
-          <%= image_tag("No-Image-Placeholder.svg.png") %>
-        <% end %>
-          <div class="car-info-top"></div>
-        <div class="car-info"car>
-          <div class="car-info-top">
-            <div class="description">
-              <h1><%= car.model %></h1>
-              <p><%= car.description %></p>
-              <p>This car is located in&nbsp<%= car.location %></p>
+    <% if @cars.blank? %>
+      <p>No cars available right now</p>
+    <% else %>
+      <% @cars.each do |car| %>
+        <div class ="listing-container">
+          <% if car.photo.present? %>
+            <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= image_tag("No-Image-Placeholder.svg.png") %>
+          <% end %>
+            <div class="car-info-top"></div>
+          <div class="car-info"car>
+            <div class="car-info-top">
+              <div class="description">
+                <h1><%= car.model %></h1>
+                <p><%= car.description %></p>
+                <p><%= car.location %></p>
+              </div>
+              <div class="price-container">
+                <h4>PRICE<h4>
+                <div class="price"><%= car.price %><p> €</p></div>
+              </div>
             </div>
             <div class="car-price-container">
               <h4>Price/hr<h4>
