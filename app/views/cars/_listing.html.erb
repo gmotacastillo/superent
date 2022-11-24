@@ -11,8 +11,7 @@
           <% else %>
             <%= image_tag("No-Image-Placeholder.svg.png") %>
           <% end %>
-            <div class="car-info-top"></div>
-          <div class="car-info"car>
+          <div class="car-info">
             <div class="car-info-top">
               <div class="description">
                 <h1><%= car.model %></h1>
@@ -28,7 +27,6 @@
               <h4>Price/hr<h4>
               <div class="car-price"><%= car.price %>&nbsp<p>€</p></div>
             </div>
-          </div>
           <div class="car-info-bottom">
             <div class="start-date">
               <h4>Available From<h4>
@@ -47,6 +45,7 @@
                   <%= link_to "Show car", car_path(car) %>
               <% end %>
             </div>
+          </div>
           </div>
         </div>
       <% end %>
