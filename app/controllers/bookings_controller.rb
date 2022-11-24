@@ -28,6 +28,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def change_status
+    @booking = Booking.find(params[:id])
+    @booking.update(status: params[:status]) if params[:status].present?
+    redirect_to booking_path(@booking)
+  end
+
   private
 
   def set_car

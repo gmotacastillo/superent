@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   resources :cars do
     resources :bookings, only: [:index, :new, :create]
   end
-  resources :bookings, only: [:show, :edit, :update, :destroy]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :bookings, only: [:show, :edit, :update, :destroy] do
+    member do
+      patch :change_status
+    end
+  end
+  resources :dashboard, only: [:show]
 end

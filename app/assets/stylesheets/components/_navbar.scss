@@ -1,36 +1,5 @@
-.navbar-superent {
-  font-family: 'Russo One', sans-serif;
-  justify-content:space-between;
-}
 
-.log-in-btn {
-  background-color: #F4C73A;
-  color: black;
-  border-radius: 5px;
-}
-
-.navbar-logo-name{
-  font-family: 'Russo One', sans-serif;
-  letter-spacing: 10px;
-  text-decoration: underline solid #F4C73A 5px;
-  color: white;
-}
-
-.navbar-menu-list li {
-  color: white;
-  display: inline-block;
-}
-
-.navbar-menu-list a{
-  text-decoration: none;
-  color: #535353;
-}
-
-.navbar-menu-list a:active{
-  color: #F4C73A;
-}
-
- .nav-container {
+.nav-container {
   background-color: black;
   display: flex;
   flex-direction: row;
@@ -39,15 +8,50 @@
   padding: 20px;
 }
 
+.navbar-superent {
+  font-family: 'Russo One', sans-serif;
+  justify-content: space-between;
+}
+
+.log-in-btn {
+  background-color: #F4C73A;
+  color: black;
+  border-radius: 5px;
+}
+
+.navbar-logo-name {
+  font-family: 'Russo One', sans-serif;
+  letter-spacing: 10px;
+  text-decoration: underline solid #F4C73A 5px;
+  color: white;
+}
+
+.navbar-menu-list {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -35px;
+}
+
+.navbar-menu-list li a {
+  color: rgba(255, 255, 255, 0.566);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.navbar-menu-list li {
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 10px;
+}
+
+.navbar-menu-list a:active{
+  color: #F4C73A;
+} 
+
 .nav-container button{
   filter:drop-shadow(0px 0px 16px #f4c63a76);
   width: 8rem;
-}
-
-.navbar-menu-login-container {
-  display: flex;
-  flex-direction: row;
-  gap:16px;
+  margin-bottom: 5px;
 }
 
 .navbar-login-container {
@@ -75,3 +79,4 @@
   background-color: rgb(255, 255, 255);
   color: black;
 }
+

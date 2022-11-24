@@ -2,7 +2,7 @@
 
 <div class="listings-container">
     <% if @cars.blank? %>
-      <p>No cars available</p>
+      <p>No cars available right now</p>
     <% else %>
       <% @cars.each do |car| %>
         <div class ="listing-container">
@@ -11,19 +11,19 @@
           <% else %>
             <%= image_tag("No-Image-Placeholder.svg.png") %>
           <% end %>
-            <div class="car-info-top"></div>
-          <div class="car-info"car>
+          <div class="car-info">
             <div class="car-info-top">
               <div class="description">
                 <h1><%= car.model %></h1>
                 <p><%= car.description %></p>
-                <p><%= car.location %></p>
+                <p>This car is located in <%= car.location %></p>
               </div>
-              <div class="price-container">
-                <h4>PRICE<h4>
-                <div class="price"><%= car.price %><p> €</p></div>
+              <div class="car-price-container">
+                <h4>Price/hr<h4>
+                <div class="car-price"><%= car.price %>&nbsp<p>€</p></div>
               </div>
             </div>
+
             <div class="car-info-bottom">
               <div class="start-date">
                 <h4>Available From<h4>
@@ -43,6 +43,20 @@
                 <% end %>
               </div>
             </div>
+            <div class="end-date">
+              <h4>Available Until<h4>
+              <p><%= car.end_date %></p>
+            </div>
+            <div class="book-btn">
+              <% if user_signed_in? %>
+                  <!-- Add here: if statement, if logged in: linkto_booking_new--->
+                  <%= link_to "Book new", new_car_booking_path(car) %>
+              <% else %>
+                  <!-- Add here: if statement, if logged out: linkto_car_show--->
+                  <%= link_to "Show car", car_path(car) %>
+              <% end %>
+            </div>
+          </div>
           </div>
         </div>
       <% end %>
