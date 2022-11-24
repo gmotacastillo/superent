@@ -15,6 +15,7 @@
             <div class="car-info-top">
               <div class="description">
                 <h1><%= car.model %></h1>
+                <p>Posted by</p><%= car.user.email%>
                 <p><%= car.description %></p>
                 <p>This car is located in <%= car.location %></p>
               </div>

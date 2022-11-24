@@ -16,7 +16,16 @@
 .log-in-btn {
   background-color: #F4C73A;
   color: black;
-  border-radius: 5px;
+  border-radius: 10px;
+  border: none;
+}
+
+.profile-link{
+  background-color: white;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  margin-right: 2rem;
+  border: none;
 }
 
 .navbar-logo-name {
@@ -46,7 +55,7 @@
 
 .navbar-menu-list a:active{
   color: #F4C73A;
-} 
+}
 
 .nav-container button{
   filter:drop-shadow(0px 0px 16px #f4c63a76);
@@ -79,4 +88,3 @@
   background-color: rgb(255, 255, 255);
   color: black;
 }
-
