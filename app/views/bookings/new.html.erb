@@ -16,9 +16,10 @@
       <br>
 
       <!--edit button is for later-->
-      <%#= link_to "Edit car", edit_car_path, class: "btn-show-car-page" %>
+
+      <%= link_to "Edit car", edit_car_path(@car), class: "btn-show-car-page" %>
       <!--delete button is for later-->
-      <%#= link_to "Delete",
+      <%= link_to "Delete",
       car_path(@car),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-show-car-page"%>
       <%= link_to "Go back", cars_path, class: "btn btn-show-car-page" %>
