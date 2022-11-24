@@ -34,7 +34,7 @@
                 <p><%= car.end_date %></p>
               </div>
               <div class="book-btn">
-                <% if user_signed_in? %>
+                <% if user_signed_in? && car.user != current_user %>
                     <!-- Add here: if statement, if logged in: linkto_booking_new--->
                     <%= link_to "Book new", new_car_booking_path(car) %>
                 <% else %>
