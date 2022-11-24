@@ -31,10 +31,10 @@
               </div>
               <div class="end-date">
                 <h4>Available Until<h4>
-                <%= car.end_date %>
+                <p><%= car.end_date %></p>
               </div>
               <div class="book-btn">
-                <% if user_signed_in? && car.user != current_user %>
+                <% if user_signed_in? %>
                     <!-- Add here: if statement, if logged in: linkto_booking_new--->
                     <%= link_to "Book new", new_car_booking_path(car) %>
                 <% else %>
@@ -43,20 +43,6 @@
                 <% end %>
               </div>
             </div>
-            <div class="end-date">
-              <h4>Available Until<h4>
-              <p><%= car.end_date %></p>
-            </div>
-            <div class="book-btn">
-              <% if user_signed_in? %>
-                  <!-- Add here: if statement, if logged in: linkto_booking_new--->
-                  <%= link_to "Book new", new_car_booking_path(car) %>
-              <% else %>
-                  <!-- Add here: if statement, if logged out: linkto_car_show--->
-                  <%= link_to "Show car", car_path(car) %>
-              <% end %>
-            </div>
-          </div>
           </div>
         </div>
       <% end %>
