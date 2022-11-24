@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
   def index
     @cars = policy_scope(Car)
-    @cars = @cars.where("location LIKE ?", params[:location]) if params[:location].present?
+    @cars = @cars.where("location ILIKE ?", params[:location]) if params[:location].present?
     @cars = @cars.where("start_date <= ?", params[:start_date]) if params[:start_date].present?
     @cars = @cars.where("end_date >= ?", params[:end_date]) if params[:end_date].present?
   end
