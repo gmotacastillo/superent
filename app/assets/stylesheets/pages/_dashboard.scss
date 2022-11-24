@@ -1,0 +1,68 @@
+.dashboard-main{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dashboard-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.reservations-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+section{
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+section{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+
+.notifications-container p {
+  width: 250px;
+  height: 50px;
+  border-radius: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: width 0.5s ease-in-out;
+}
+
+.notifications-container p:hover {
+  height: 200px;
+}
+
+.notifications-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+section:hover{
+  background: grey;
+}
+
+.booking-item-container{
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}
+
+// .img-porsche{
+//   width: 500px;
+//   height: auto;
+// }
