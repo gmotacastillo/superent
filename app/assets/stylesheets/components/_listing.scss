@@ -17,18 +17,19 @@
   padding-bottom: 1rem;
   margin: 0rem 1rem 1rem 0rem;
   box-shadow: rgba(255, 255, 255, 0.16) 0px 10px 36px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px;
+  color: black;
 }
 
 // main container elements
 .listings-container img{
-  width: 500px;
+  width: 400px;
   height: 250px;
   border-radius: 20px;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
-.listing-container .car-info{
+.car-info{
   background: #B9B9B9;
   border-radius: 20px;
   display: flex;
@@ -38,47 +39,64 @@
   padding-right: 1rem;
   padding-top: 1rem;
   padding-left: 1rem;
+  align-content: space-between;
 }
 
 // car info elements top
-.listing-container .car-info-top{
+.car-info-top{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.description p{
-  padding-top: 0.5rem;
-  width: 350px;
-  font-size: small;
-}
-
 // price
 
-.price{
+.price-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.price{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.price-container h4{
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
 // car info elements bottom
-.listing-container .car-info-bottom{
+.car-info-bottom{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.car-info-bottom > .start-date, .end-date {
+.start-date, .end-date {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
-.car-info-bottom > .start-date p, .end-date p{
-  font-size: small;
-  font-weight: 400;
+.end-date h4{
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 0 !important;
 }
 
-.listing-container .book-btn {
+.start-date h4{
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 0 !important;
+}
+
+.book-btn {
   background: linear-gradient(90deg,#EEB60A, #FFE491);
   height: 3rem;
   width: 8rem;
@@ -93,7 +111,7 @@
 .listing-container a:link{
   text-decoration: none;
   color: black;
-  font-weight: 400;
+  font-weight: bold;
   font-size: small;
   font-family: Arial, Helvetica, sans-serif;
 }
