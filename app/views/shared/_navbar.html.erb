@@ -33,7 +33,7 @@
     <button class="profile-link">
       <%= link_to "My profile", users_dashboard_path, class: "nav-link"%>
     </button>
-    <button class="log-in-btn">
+    <button class="log-out-btn">
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </button>
   <% else %>

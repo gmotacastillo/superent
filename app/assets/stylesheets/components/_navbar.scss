@@ -20,6 +20,13 @@
   border: none;
 }
 
+.log-out-btn{
+    background-color: #F4C73A;
+    color: black;
+    border-radius: 10px;
+    border: none;
+}
+
 .profile-link{
   background-color: white;
   color: rgb(0, 0, 0);
@@ -60,7 +67,6 @@
 .nav-container button{
   filter:drop-shadow(0px 0px 16px #f4c63a76);
   width: 8rem;
-  margin-bottom: 5px;
 }
 
 .navbar-login-container {
