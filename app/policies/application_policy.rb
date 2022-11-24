@@ -2,7 +2,6 @@
 
 class ApplicationPolicy
   attr_reader :user, :record
-
   def initialize(user, record)
     @user = user
     @record = record
@@ -26,7 +25,7 @@ class ApplicationPolicy
   end
 
   def update?
-    true
+    false
   end
 
   def edit?
