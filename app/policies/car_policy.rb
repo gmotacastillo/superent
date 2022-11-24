@@ -2,7 +2,7 @@ class CarPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-       scope.where("end_date > ?", DateTime.now)
+      scope.where("end_date > ?", DateTime.now)
     end
   end
   def index?
@@ -11,4 +11,14 @@ class CarPolicy < ApplicationPolicy
   def show?
     true
   end
+  def update?
+    record.user == user
+
+  end
+  def edit?
+    #edit possible if yes
+    record.user == user
+
+  end
+
 end
