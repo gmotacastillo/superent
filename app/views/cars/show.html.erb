@@ -10,7 +10,7 @@
       <p class="text-car-show">$<%= @car.price %></p>
       <p class="text-car-show">Available from: <%= @car.start_date %></p>
       <!-- Line below is a test for displaying user uploaded photo of the car -->
-      <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+      <%#= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
       <p class="text-car-show">To: <%= @car.end_date %></p>
       <br>
 
@@ -27,23 +27,5 @@
 
 
 
-<!--div below is for the right half of the screen (booking form)-->
-<!--this form was just copied and pasted from the bookings/new, and changed to a form_with-->
-  <% if user_signed_in? %>
-   <div class="right-car-booking-container">
-        <br>
-        <p class="title-car-show-page">Book now</p><br>
-        <%= form_with , remote: true do |f| %>
-        <p class="text-car-show">Start date:</p><br>
-        <%= f.date_field :start_date %> <br>
-        <br>
-        <p class="text-car-show">End date:</p><br>
-        <%= f.date_field :end_date %> <br>
-        <br>
-        <br>
-        <%= f.submit "Book this car", class: "btn btn-show-car-page" %>
-        <% end %>
-        </div>
-    </div>
-  <% end %>
+
 </div>

@@ -3,7 +3,7 @@
 <div class="listings-container">
     <% @cars.each do |car| %>
       <div class ="listing-container">
-        <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+        <%#= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="car-info-top"></div>
         <div class="car-info"car>
           <div class="car-info-top">
@@ -27,7 +27,13 @@
               <%= car.end_date %>
             </div>
             <div class="book-btn">
-              <%= link_to "RESERVE", car_path(car) %>
+              <% if user_signed_in? %>
+                  <!-- Add here: if statement, if logged in: linkto_booking_new--->
+                  <%= link_to "Book new", new_car_booking_path(car) %>
+              <% else %>
+                  <!-- Add here: if statement, if logged out: linkto_car_show--->
+                  <%= link_to "Show car", car_path(car) %>
+              <% end %>
             </div>
           </div>
         </div>
