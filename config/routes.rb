@@ -9,5 +9,6 @@ Rails.application.routes.draw do
       patch :change_status
     end
   end
-  resources :dashboard, only: [:show]
+  get "users/dashboard", to: "dashboard#show"
+  # resources :dashboard, only: [:show]
 end
