@@ -16,16 +16,12 @@
               <div class="description">
                 <h1><%= car.model %></h1>
                 <p><%= car.description %></p>
-                <p><%= car.location %></p>
+                <p>This car is located in <%= car.location %></p>
               </div>
-              <div class="price-container">
-                <h4>PRICE<h4>
-                <div class="price"><%= car.price %><p> €</p></div>
+              <div class="car-price-container">
+                <h4>Price/hr<h4>
+                <div class="car-price"><%= car.price %>&nbsp<p>€</p></div>
               </div>
-            </div>
-            <div class="car-price-container">
-              <h4>Price/hr<h4>
-              <div class="car-price"><%= car.price %>&nbsp<p>€</p></div>
             </div>
           <div class="car-info-bottom">
             <div class="start-date">
