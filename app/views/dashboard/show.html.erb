@@ -1,1 +1,34 @@
-<p>Hello</p>
+<div>
+  <div>
+    <h1>Your dashboard</h1>
+    <div>
+      <h2>Supercars you have requested</h2>
+      <% @my_requested_bookings.each do |booking| %>
+        <strong><%= booking.id %></strong>
+        <p>Start date:</p>
+        <%= booking.start_date %>
+        <p>End date:</p>
+        <%= booking.end_date %>
+        <p>Status:</p>
+        <%= booking.status %>
+        <br>
+        <% end %>
+    </div>
+    <div>
+      <h2>Users who want to book your cars</h2>
+      <% @my_received_bookings.each do |booking| %>
+        <strong><%= booking.id %></strong>
+        <p>Start date:</p>
+        <%= booking.start_date %>
+        <p>End date:</p>
+        <%= booking.end_date %>
+        <p>Status:</p>
+        <%= booking.status %>
+        <br>
+         <p>Change status</p>
+        <%= link_to "Confirm booking", change_status_booking_path(booking, status: "archived"), data:{turbo_method: :patch} %>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>
