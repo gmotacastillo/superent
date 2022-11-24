@@ -3,13 +3,14 @@
 <div class="listings-container">
     <% @cars.each do |car| %>
       <div class ="listing-container">
-        <img src="https://images.squarespace-cdn.com/content/v1/5ac3c4f3a2772c77b7bf6470/1555081097471-4RUXS0SAFTG7JRCXT48P/e7ddd9d5-00fb-4246-9c28-32c892f484b0.JPG?format=1000w" alt="">
+        <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="car-info-top"></div>
         <div class="car-info"car>
           <div class="car-info-top">
             <div class="description">
               <%= car.model %>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae fugit neque perferendis dolore, amet inventore voluptate blanditiis error harum debitis, tempore dolor, eum vero? Laudantium cum ex aut illum tempore!</p>
+              <%= car.description %>
+              <%= car.location %>
             </div>
             <div class="price">
               <p>PRICE</p>
