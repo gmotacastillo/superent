@@ -1,46 +1,50 @@
 <h4>All Listings</h4>
 
 <div class="listings-container">
-    <% @cars.each do |car| %>
-      <div class ="listing-container">
-        <% if car.photo.present? %>
-          <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-        <% else %>
-          <%= image_tag("No-Image-Placeholder.svg.png") %>
-        <% end %>
-          <div class="car-info-top"></div>
-        <div class="car-info"car>
-          <div class="car-info-top">
-            <div class="description">
-              <h1><%= car.model %></h1>
-              <p><%= car.description %></p>
-              <p><%= car.location %></p>
+    <% if @cars.blank? %>
+      <p>No cars available</p>
+    <% else %>
+      <% @cars.each do |car| %>
+        <div class ="listing-container">
+          <% if car.photo.present? %>
+            <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= image_tag("No-Image-Placeholder.svg.png") %>
+          <% end %>
+            <div class="car-info-top"></div>
+          <div class="car-info"car>
+            <div class="car-info-top">
+              <div class="description">
+                <h1><%= car.model %></h1>
+                <p><%= car.description %></p>
+                <p><%= car.location %></p>
+              </div>
+              <div class="price-container">
+                <h4>PRICE<h4>
+                <div class="price"><%= car.price %><p> €</p></div>
+              </div>
             </div>
-            <div class="price-container">
-              <h4>PRICE<h4>
-              <div class="price"><%= car.price %><p> €</p></div>
-            </div>
-          </div>
-          <div class="car-info-bottom">
-            <div class="start-date">
-              <h4>Available From<h4>
-              <%= car.start_date %>
-            </div>
-            <div class="end-date">
-              <h4>Available Until<h4>
-              <%= car.end_date %>
-            </div>
-            <div class="book-btn">
-              <% if user_signed_in? %>
-                  <!-- Add here: if statement, if logged in: linkto_booking_new--->
-                  <%= link_to "Book new", new_car_booking_path(car) %>
-              <% else %>
-                  <!-- Add here: if statement, if logged out: linkto_car_show--->
-                  <%= link_to "Show car", car_path(car) %>
-              <% end %>
+            <div class="car-info-bottom">
+              <div class="start-date">
+                <h4>Available From<h4>
+                <%= car.start_date %>
+              </div>
+              <div class="end-date">
+                <h4>Available Until<h4>
+                <%= car.end_date %>
+              </div>
+              <div class="book-btn">
+                <% if user_signed_in? %>
+                    <!-- Add here: if statement, if logged in: linkto_booking_new--->
+                    <%= link_to "Book new", new_car_booking_path(car) %>
+                <% else %>
+                    <!-- Add here: if statement, if logged out: linkto_car_show--->
+                    <%= link_to "Show car", car_path(car) %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
 </div>
