@@ -18,17 +18,17 @@
             </div>
             <div class="price-container">
               <h4>PRICE<h4>
-              <div class="price"><%= car.price %><p> €</p></div>
+              <div class="price"><%= car.price %>&nbsp<p>€</p></div>
             </div>
           </div>
           <div class="car-info-bottom">
             <div class="start-date">
               <h4>Available From<h4>
-              <%= car.start_date %>
+              <p><%= car.start_date %></p>
             </div>
             <div class="end-date">
               <h4>Available Until<h4>
-              <%= car.end_date %>
+              <p><%= car.end_date %></p>
             </div>
             <div class="book-btn">
               <% if user_signed_in? %>
