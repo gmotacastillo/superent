@@ -3,27 +3,31 @@
 <div class="listings-container">
     <% @cars.each do |car| %>
       <div class ="listing-container">
-        <%#= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+        <% if car.photo.present? %>
+          <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag("No-Image-Placeholder.svg.png") %>
+        <% end %>
           <div class="car-info-top"></div>
         <div class="car-info"car>
           <div class="car-info-top">
             <div class="description">
-              <%= car.model %>
-              <%= car.description %>
-              <%= car.location %>
+              <h1><%= car.model %></h1>
+              <p><%= car.description %></p>
+              <p><%= car.location %></p>
             </div>
-            <div class="price">
-              <p>PRICE</p>
-              <%= car.price %>
+            <div class="price-container">
+              <h4>PRICE<h4>
+              <div class="price"><%= car.price %><p> €</p></div>
             </div>
           </div>
           <div class="car-info-bottom">
             <div class="start-date">
-              <p>From<p>
+              <h4>Available From<h4>
               <%= car.start_date %>
             </div>
             <div class="end-date">
-              <p>To</p>
+              <h4>Available Until<h4>
               <%= car.end_date %>
             </div>
             <div class="book-btn">
