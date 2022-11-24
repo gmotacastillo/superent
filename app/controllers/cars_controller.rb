@@ -1,22 +1,25 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
-    @cars = @cars.where("location LIKE ?", "#{params[:location]}") if params[:location].present?
+    @cars = policy_scope(Car)
+    @cars = @cars.where("location LIKE ?", params[:location]) if params[:location].present?
     @cars = @cars.where("start_date <= ?", params[:start_date]) if params[:start_date].present?
     @cars = @cars.where("end_date >= ?", params[:end_date]) if params[:end_date].present?
   end
 
   def show
     @car = Car.find(params[:id])
+    authorize(@car)
   end
 
   def new
     @car = Car.new
+    authorize(@car)
   end
 
   def create
     @car = Car.new(car_params)
     @car.user = current_user
+    authorize(@car)
     if @car.save
       redirect_to cars_path
     else
@@ -26,18 +29,21 @@ class CarsController < ApplicationController
 
   def edit
     @car = Car.find(params[:id])
+    authorize(@car)
   end
 
   def update
     @car = Car.find(params[:id])
     @car.update(car_params)
     redirect_to car_path(@car)
+    authorize(@car)
   end
 
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
     redirect_to cars_path, status: :see_other
+    authorize(@car)
   end
 
   private
