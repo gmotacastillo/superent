@@ -5,19 +5,20 @@
     <div class="footer-elements-container">
     <%= form_with url: cars_path, method: :get, remote: true do  |f| %>
       <div class="info-container">
-        <p>Location:</p>
-        <%= f.text_field :location %>
+        <p>Choose a location</p>
+        <%= f.text_field :location, placeholder:"Barcelona" %>
       </div>
       <div class="info-container">
-        <p>From:</p>
+        <p>From</p>
         <%= f.date_field :start_date %>
       </div>
       <div class="info-container">
-        <p>To:</p>
+        <p>To</p>
         <%= f.date_field :end_date%>
       </div>
       <div class="search-btn">
-        <%= f.submit "Find your supercar"%>
+        <i class="fas fa-search"></i>
+        <%= f.submit "Search"%>
       </div>
     <% end %>
     </div>
