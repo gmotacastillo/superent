@@ -1,9 +1,10 @@
+<!--the functionality for editing is not working, but the buttons are--->
 <%= simple_form_for @car do |f| %>
   <%= f.input :model %>
   <%= f.input :price %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn" %>
 <% end %>
 
-<%= link_to "Go back", cars_path %>
+<%= link_to "Go back", new_car_booking_path(@car) %>
