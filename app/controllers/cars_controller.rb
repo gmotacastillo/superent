@@ -29,6 +29,8 @@ class CarsController < ApplicationController
 
   def edit
     @car = Car.find(params[:id])
+    #here we need to complete this action !!!!!!!!!!
+    #update
     authorize(@car)
   end
 

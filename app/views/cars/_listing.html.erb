@@ -24,24 +24,28 @@
                 <div class="price"><%= car.price %><p> €</p></div>
               </div>
             </div>
-            <div class="car-info-bottom">
-              <div class="start-date">
-                <h4>Available From<h4>
-                <%= car.start_date %>
-              </div>
-              <div class="end-date">
-                <h4>Available Until<h4>
-                <%= car.end_date %>
-              </div>
-              <div class="book-btn">
-                <% if user_signed_in? %>
-                    <!-- Add here: if statement, if logged in: linkto_booking_new--->
-                    <%= link_to "Book new", new_car_booking_path(car) %>
-                <% else %>
-                    <!-- Add here: if statement, if logged out: linkto_car_show--->
-                    <%= link_to "Show car", car_path(car) %>
-                <% end %>
-              </div>
+            <div class="car-price-container">
+              <h4>Price/hr<h4>
+              <div class="car-price"><%= car.price %>&nbsp<p>€</p></div>
+            </div>
+          </div>
+          <div class="car-info-bottom">
+            <div class="start-date">
+              <h4>Available From<h4>
+              <p><%= car.start_date %></p>
+            </div>
+            <div class="end-date">
+              <h4>Available Until<h4>
+              <p><%= car.end_date %></p>
+            </div>
+            <div class="book-btn">
+              <% if user_signed_in? %>
+                  <!-- Add here: if statement, if logged in: linkto_booking_new--->
+                  <%= link_to "Book new", new_car_booking_path(car) %>
+              <% else %>
+                  <!-- Add here: if statement, if logged out: linkto_car_show--->
+                  <%= link_to "Show car", car_path(car) %>
+              <% end %>
             </div>
           </div>
         </div>
