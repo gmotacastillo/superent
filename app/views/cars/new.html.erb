@@ -24,8 +24,8 @@
       <div class="col-sm">
         <h3>Description</h3>
           <%= f.input :description, label: false, :input_html => {:style=> 'height: 250px'} %>
-        <%# <h3>Add an image</h3>
-          <%= f.input :image_url, label: false, :input_html => {:style=> 'height: 250px'} %>
+        <h3>Add an image</h3>
+          <%= f.input :photo, as: :file, label: false, :input_html => {:style=> 'height: 250px'} %>
           <h3>Where is the car located?</h3>
           <%= f.input :location, label: false %>
       </div>
