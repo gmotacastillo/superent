@@ -18,13 +18,21 @@
       <%= f.date_field :end_date, class: 'date-field' %>
     </div>
 
-    <div class="price-container">
+    <div class="graph-container">
       <p>Price / Day</p>
+      <%= image_tag("graphic.png", size:"265x100") %>
+    </div>
+
+    <div class="price-container">
       <div class="text-field-container">
-          <%= f.text_field :start_price, placeholder: " Start price", class: 'price-text-field' %>
-          <%= f.text_field :end_price, placeholder: " End price", class: 'price-text-field' %>
+          <%= f.text_field :start_price, placeholder: "      Min", class: 'price-text-field' %>
+          <%= f.text_field :end_price, placeholder: "      Max", class: 'price-text-field' %>
       </div>
+
+      <div class="button-container">
       <%= f.submit "Filter", class: 'button-field' %>
+      </div>
+
       <% end %>
       </div>
     </div>
