@@ -4,13 +4,14 @@
 
       <p class="title-car-show-page" >Your reservation</p><br>
        <div class="car-picture-show-page-infos">
-      carpic
+      <% if @car.photo.attached? %>
+        <%= cl_image_tag(@car.photo.key, height: 300, width: 400, crop: :fill) %>
+      <% end %>
        </div><br>
       <p class="text-car-show"><%= @car.model %></p>
       <p class="text-car-show">$<%= @car.price %></p>
       <p class="text-car-show">Available from: <%= @car.start_date %></p>
       <!-- Line below is a test for displaying user uploaded photo of the car -->
-      <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
       <p class="text-car-show">To: <%= @car.end_date %></p>
       <br>
       <!--edit button is for later-->
@@ -32,7 +33,7 @@
    <div class="right-car-booking-container">
         <br>
         <p class="title-car-show-page">Book now</p><br>
-        <%= form_with , remote: true do |f| %>
+        <%= form_with model: @booking, remote: true do |f| %>
         <p class="text-car-show">Start date:</p><br>
         <%= f.date_field :start_date %> <br>
         <br>
