@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :car
-  enum status: { active: 0, archived: 1 }
+  enum status: { pending: 0, confirmed: 1, rejected: 2 }
 end
