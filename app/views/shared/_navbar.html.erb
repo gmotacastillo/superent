@@ -8,19 +8,7 @@
   </div>
 
   <div class="navbar-menu-container">
-
-    <ul class="navbar-menu-list">
-      <li class="navbar-menu-li">
-        <%= link_to "Home", "#", class: "home-btn-link" %>
-      </li>
-      <li class="navbar-menu-li">
-        <%= link_to "Contact", "#", class: "contact-btn-link" %>
-      </li>
-        <li class="navbar-menu-li">
-          <%= link_to "About", "#", class: "about-btn-link" %>
-        </li>
-      </ul>
-
+    
   </div>
 
   <div class="navbar-login-container">
@@ -37,8 +25,8 @@
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </button>
   <% else %>
-    <button class="log-in-btn">
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    <button class="log-out-btn">
+      <%= link_to "Login", new_user_session_path, class: "log-out-btn" %>
     </button>
   <% end %>
   </div>
