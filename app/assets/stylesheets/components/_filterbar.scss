@@ -17,7 +17,7 @@
     border: none;
     background-color: #D8D8D8;
     width: 265px;
-    
+
 }
 .filter-container .date-field input{
     color-scheme: light;
@@ -108,4 +108,47 @@
     margin-bottom: -2px;
     color: rgba(255, 255, 255, 0.486);
     font-size: 14px;
+}
+
+.slider{
+  height: 10px;
+  border-radius: 10px;
+  background: #424242;
+  position: relative;
+}
+
+.slider .progress{
+  height: 10px;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  border-radius: 5px;
+  background: black;
+}
+
+.text-field-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.text-field-container input{
+  width: 6rem;
+}
+
+.range-input input{
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  -webkit-appearance: none;
+  background: none;
+  pointer-events: none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  height: 17px;
+  width: 17px;
+  background: #EEB70C;
+  -webkit-appearance: none;
+  pointer-events: auto;
+  border-radius: 50%;
 }
