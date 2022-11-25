@@ -10,7 +10,11 @@
   <div class="left-car-info-container">
       <p class="title-car-show-page" >The car you are looking for</p><br>
       <div class="car-picture-show-page-infos">
-        carpic
+        <% if @car.photo.present? %>
+          <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag("No-Image-Placeholder.svg.png", height:300, width:400) %>
+        <% end %>
       </div><br>
       <p class="text-car-show"><%= @car.model %></p>
       <p class="text-car-show">Price: <%= @car.price %> $</p>
