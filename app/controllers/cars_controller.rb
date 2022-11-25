@@ -4,6 +4,8 @@ class CarsController < ApplicationController
     @cars = @cars.where("location ILIKE ?", params[:location]) if params[:location].present?
     @cars = @cars.where("start_date <= ?", params[:start_date]) if params[:start_date].present?
     @cars = @cars.where("end_date >= ?", params[:end_date]) if params[:end_date].present?
+    @cars = @cars.where("price >= ?", params[:start_price]) if params[:start_price].present?
+    @cars = @cars.where("price <= ?", params[:end_price]) if params[:end_price].present?
   end
 
   def show
@@ -51,6 +53,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:model, :price, :start_date, :end_date, :description, :image_url, :photo, :location)
+    params.require(:car).permit(:model, :price, :start_date, :end_date, :description, :image_url, :photo, :location, :start_price, :end_price)
   end
 end
