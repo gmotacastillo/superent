@@ -1,12 +1,17 @@
 
+<!--This page only can be seen by people that are logged in AND dont own the car!-->
+
+
+
+
+
 <div class="big-container">
   <!--div below is for the left half of the screen (car info)-->
   <div class="left-car-info-container">
-
       <p class="title-car-show-page" >Your reservation</p><br>
-       <div class="car-picture-show-page-infos">
-      carpic
-       </div><br>
+      <div class="car-picture-show-page-infos">
+        carpic
+      </div><br>
       <p class="text-car-show"><%= @car.model %></p>
       <p class="text-car-show">$<%= @car.price %></p>
       <p class="text-car-show">Available from: <%= @car.start_date %></p>
@@ -14,21 +19,16 @@
       <%#= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
       <p class="text-car-show">To: <%= @car.end_date %></p>
       <br>
-
-      <!--edit button is for later-->
-
-
-      <!--delete button is for later-->
-
       <%= link_to "Go back", cars_path, class: "btn btn-show-car-page" %>
-<!---if its the users car he should see the form below--->
+    <!---right half of the screen--->
   </div>
   <div class="right-car-booking-container">
-  <%= simple_form_for [@user, @car, @booking]  do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :status %>
-  <%= f.submit "Submit booking", class: "btn btn-primary" %>
-  <% end %>
+    <%= simple_form_for [@user, @car, @booking]  do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%#= The status below does not make sense in this context %>
+      <%#= f.input :status %>
+      <%= f.submit "Submit booking", class: "btn btn-show-car-page" %>
+    <% end %>
   </div>
 </div>
