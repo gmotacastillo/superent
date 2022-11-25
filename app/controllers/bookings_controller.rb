@@ -18,8 +18,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.car_id = @car.id
     @booking.user = current_user
-    @booking.car = @car
     authorize(@booking)
     if @booking.save
       redirect_to booking_path(@booking)
@@ -41,6 +41,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :status)
+    #The status does no make a lot of sense here?
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
