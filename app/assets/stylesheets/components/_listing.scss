@@ -23,14 +23,14 @@
 // main container elements
 .listings-container img{
   width: 400px;
-  height: 250px;
+  height: 300px;
   border-radius: 20px;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
 .car-info{
-  background: #B9B9B9;
+  background: rgb(212, 212, 212);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -118,18 +118,6 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   padding: 0 !important;
-}
-
-.start-date p{
-  font-size: medium;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
-}
-
-.end-date p{
-  font-size: medium;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
 }
 
 .book-btn {

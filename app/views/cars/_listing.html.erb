@@ -16,14 +16,17 @@
               <div class="description">
                 <h1><%= car.model %></h1>
                 <p>Posted by</p><%= car.user.email%>
-                <p><%= car.description %></p>
-                <p>This car is located in <%= car.location %></p>
               </div>
               <div class="car-price-container">
                 <h4>Price/hr<h4>
                 <div class="car-price"><%= car.price %>&nbsp<p>€</p></div>
               </div>
             </div>
+
+            <div class="car-info-middle">
+                <p><%= car.description %></p>
+                <p>This car is located in <%= car.location %></p>
+              </div>
 
             <div class="car-info-bottom">
               <div class="start-date">
