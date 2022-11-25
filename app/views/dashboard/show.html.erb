@@ -5,17 +5,19 @@
     <div class="my-cars-container">
         <div>
         <% @my_cars.each do |car| %>
-        <section>
-          <strong><%= car.model %></strong>
-          &nbsp
-          &nbsp
-          <%= car.price %>
-          <%= car.start_date %>
-          <%= car.end_date %>
+        <section class="d-flex align-items-center p-2">
+          <p><%= car.model %></p>
+          <p>Price:</p>
+          <p><%= car.price %></p>
+          <p>Start-date:</p>
+          <p><%= car.start_date %></p>
+          <p>End-date:</p>
+          <p><%= car.end_date %></p>
           <!---Add button here to get to the show_car page--->
-          <%= car.location %>
+            <p>location:</p>
+          <p><%= car.location %></p>
           <%= cl_image_tag car.photo.key, height: 100, width: 100, crop: :fill, class:"dash-img"%>
-          <%= link_to "Show car", car_path(car), class: "btn btn-show-car-page" %>
+          <%= link_to "Show", car_path(car), class: "btn confirm-reject-buttons" %>
         </section>
         <% end %>
         </div>
@@ -25,21 +27,21 @@
       <br>
     <div class="reservations-container">
       <% @my_requested_bookings.each do |booking| %>
-        <section>
+        <section class="p-2">
         <strong><%= booking.car.model %></strong>
         &nbsp
         &nbsp
         <div class="booking-item-container">
           <p>Start date:</p>
-          <%= booking.start_date %>
+          <p><%= booking.start_date %></p>
         </div>
         <div class="booking-item-container">
           <p>End date:</p>
-          <%= booking.end_date %>
+          <p><%= booking.end_date %></p>
         </div>
         <div class="booking-item-container">
           <p>Status:</p>
-          <%= booking.status %>
+          <p><%= booking.status %></p>
         </div>
         <br>
         </section>
@@ -67,8 +69,8 @@
         </div>
         <div class="booking-item-container">
           <p>Change status</p>
-          <%= link_to "Confirm booking", change_status_booking_path(booking, status: 1), data:{turbo_method: :patch}, class: "btn btn-show-car-page" %>
-          <%= link_to "Reject booking", change_status_booking_path(booking, status: 2), data:{turbo_method: :patch}, class: "btn btn-show-car-page" %>
+          <%= link_to "Confirm", change_status_booking_path(booking, status: 1), data:{turbo_method: :patch}, class: "btn btn-show-car-page mr-1" %>
+          <%= link_to "Reject", change_status_booking_path(booking, status: 2), data:{turbo_method: :patch}, class: "btn btn-show-car-page" %>
         </div>
         &nbsp
         </section>
