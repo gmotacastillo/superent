@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
+  #helper method from devise for redirect after login
+  def after_sign_in_path_for(resource)
+    cars_path(current_user)
+  end
   private
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^dashboard$) /
