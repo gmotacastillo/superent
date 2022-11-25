@@ -4,6 +4,7 @@
 
 }
 
+
 .filter-container .location-text-field {
     border-radius: 10px;
     border: none;
@@ -51,10 +52,10 @@
 }
 
 .filter-container .filter-div {
-    height: 425px;
+    height: 74vh;
     width: 300px;
     margin-left:10px;
-    background: linear-gradient(grey, #505050);
+    background: linear-gradient(#636363, #63636300);
     padding:15px;
     border-radius: 20px;
     box-sizing: border-box;
@@ -115,6 +116,7 @@
   border-radius: 10px;
   background: #424242;
   position: relative;
+  margin-bottom: 5rem;
 }
 
 .slider .progress{

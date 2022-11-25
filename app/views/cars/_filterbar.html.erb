@@ -1,6 +1,6 @@
 <h4>Filter</h4>
 
-<div class="filter-div">
+<div class="filter-div" data-controller="slider">
 
   <div class=“footer-container”>
     <div class=“footer-elements-container”>
@@ -25,18 +25,23 @@
 
     <div class="price-container">
       <div class="text-field-container">
-          <%= f.number_field :start_price, placeholder: "      Min", class: 'price-text-field', value:"2500" %>
-          <%= f.number_field :end_price, placeholder: "      Max", class: 'price-text-field', value:"7500" %>
+          <%= f.number_field :start_price, placeholder: "      Min", class: 'price-text-field', value:"250", data: { slider_target: "minValue" } %>
+          <%= f.number_field :end_price, placeholder: "      Max", class: 'price-text-field', value:"1750", data: { slider_target: "maxValue" } %>
       </div>
-      <div class="slider">
+      <div data-slider-target="mySlider"
+      data-min="250"
+      data-max="1750"
+      data-range="2000"
+    ></div>
+      <%# <div class="slider">
         <div class="progress"></div>
         <div class="range-input">
-          <input type="range" class="range-min" min="0" max="1000" value="2500">
-          <input type="range" class="range-max" min="0" max="1000" value="7500">
+          <input type="range" class="range-min" min="0" max="1000" value="100" data-action="input->slider#change input->slider#enable">
+          <input type="range" class="range-max" min="0" max="1000" value="900" data-action="input->slider#change input->slider#enable">
         </div>
-      </div>
+      </div> %>
 
-      <div class="button-container">
+      <div class="book-btn">
       <%= f.submit "Filter", class: 'button-field' %>
       </div>
 
