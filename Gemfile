@@ -79,3 +79,4 @@ gem "pundit"
 gem "devise"
 gem "faker"
 gem "cloudinary"
+gem 'typing'
