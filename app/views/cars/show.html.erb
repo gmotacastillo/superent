@@ -18,7 +18,7 @@
       <p class="text-car-show">$<%= @car.price %></p>
       <p class="text-car-show">Available from: <%= @car.start_date %></p>
       <!-- Line below is a test for displaying user uploaded photo of the car -->
-      <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+      <%#= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
       <p class="text-car-show">To: <%= @car.end_date %></p>
       <br>
 
