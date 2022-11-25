@@ -5,5 +5,8 @@ class BookingPolicy < ApplicationPolicy
       scope.all
     end
   end
+  def change_status?
+    true
+  end
  #because it inherits its stil true/false for all actions
 end

@@ -30,8 +30,9 @@ class BookingsController < ApplicationController
 
   def change_status
     @booking = Booking.find(params[:id])
-    @booking.update(status: params[:status]) if params[:status].present?
-    redirect_to booking_path(@booking)
+    authorize(@booking)
+    @booking.update(status: params[:status].to_i) if params[:status].present?
+    redirect_to users_dashboard_path
   end
 
   private

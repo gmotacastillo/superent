@@ -1,9 +1,22 @@
 <div class="dashboard-main">
   <div class="dashboard-container">
+    <div>
+      <h2>My cars</h2>
+        <div>
+        <% @my_cars.each do |car| %>
+        <%= car.model %>
+        <%= car.price %>
+        <%= car.start_date %>
+        <%= car.end_date %>
+        <%= car.location %>
+        <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        </div>
+    </div>
     <div class="reservations-container">
-      <h2>Supercars you have requested</h2>
+      <h2>Bookings</h2>
       <% @my_requested_bookings.each do |booking| %>
-        <strong><%= booking.id %></strong>
+        <strong><%= booking.car.model %></strong>
         <p>Start date:</p>
         <%= booking.start_date %>
         <p>End date:</p>
@@ -14,10 +27,10 @@
         <% end %>
     </div>
     <div class="notifications-container">
-      <h2>Pending Requests</h2>
+      <h2>Requests</h2>
       <% @my_received_bookings.each do |booking| %>
         <section>
-        <strong><%= booking.id %></strong>
+        <strong><%= booking.car.model %></strong>
         &nbsp
         &nbsp
         <div class="booking-item-container">
@@ -34,7 +47,8 @@
         </div>
         <div class="booking-item-container">
           <p>Change status</p>
-          <%= link_to "Confirm booking", change_status_booking_path(booking, status: "archived"), data:{turbo_method: :patch} %>
+          <%= link_to "Confirm booking", change_status_booking_path(booking, status: 1), data:{turbo_method: :patch} %>
+          <%= link_to "Reject booking", change_status_booking_path(booking, status: 2), data:{turbo_method: :patch} %>
         </div>
         </section>
       <% end %>
