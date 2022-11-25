@@ -7,9 +7,7 @@
     <%= form_with url: cars_path, method: :get, remote: true do  |f| %>
       <div class="location-container">
       <h6>Location</h6>
-      <br>
       <%= f.text_field :location, placeholder: "  Please choose a city", class: 'location-text-field' %>
-      &nbsp
     </div>
 
     <div class="availability-container">
