@@ -59,7 +59,7 @@ end
 end
 
 puts "Cars created"
-puts "Creating bookings"
+puts "Creating bookings..."
 Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user1.id, car_id: Car.last.id, status: "pending")
 Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user2.id, car_id: Car.last.id, status: "pending")
 puts "Bookings created"
