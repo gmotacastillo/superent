@@ -42,6 +42,7 @@ left: 0;
 // ------------FOOTER---------------//
 .layout-container .footer-container{
   z-index: 10px;
+  margin-bottom: 1rem;
 }
 
 .footer-elements-container{
@@ -134,4 +135,22 @@ input[type="date"].date-input--has-value::-webkit-datetime-edit-month-field,
 input[type="date"].date-input--has-value::-webkit-datetime-edit-day-field,
 input[type="date"].date-input--has-value::-webkit-datetime-edit-year-field {
   color: #ffffff;
+}
+
+// typing
+
+.iam{
+  color: white;
+    font-size: 55px;
+    padding: 15px;
+    font-family: sans-serif;
+    margin-right: 10rem;
+}
+.text{
+  color: white;
+    border-right: 2px solid red;
+    font-size: 55px;
+    font-family: sans-serif;
+    color: rgb(255, 30, 0);
+    margin-right: 10rem;
 }
