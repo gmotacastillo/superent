@@ -21,7 +21,7 @@ class CarsController < ApplicationController
     @car.user = current_user
     authorize(@car)
     if @car.save
-      redirect_to cars_path
+      redirect_to users_dashboard_path
     else
       render :new
     end
