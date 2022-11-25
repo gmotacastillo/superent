@@ -1,7 +1,7 @@
 .filter-container h4 {
     color: white;
     padding-left: 5%;
-
+    margin-bottom: 1rem;
 }
 
 
@@ -46,7 +46,7 @@
     justify-content:end;
 }
 
-.button-container {
+.filter-container .button-container {
     display: flex;
     justify-content: center;
 }
@@ -74,6 +74,8 @@
 .filter-container {
     height: 400px;
     width: 25%;
+    margin-top: 1rem;
+
 }
 .filter-container .text-field-container input[type="placeholder"]{
     color:white;
@@ -111,22 +113,6 @@
     font-size: 14px;
 }
 
-.slider{
-  height: 10px;
-  border-radius: 10px;
-  background: #424242;
-  position: relative;
-  margin-bottom: 5rem;
-}
-
-.slider .progress{
-  height: 10px;
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  border-radius: 5px;
-  background: black;
-}
 
 .text-field-container{
   display: flex;
@@ -135,22 +121,4 @@
 
 .text-field-container input{
   width: 6rem;
-}
-
-.range-input input{
-  position: absolute;
-  height: 10px;
-  width: 100%;
-  -webkit-appearance: none;
-  background: none;
-  pointer-events: none;
-}
-
-input[type="range"]::-webkit-slider-thumb{
-  height: 17px;
-  width: 17px;
-  background: #EEB70C;
-  -webkit-appearance: none;
-  pointer-events: auto;
-  border-radius: 50%;
 }
