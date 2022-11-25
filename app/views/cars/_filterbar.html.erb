@@ -20,7 +20,12 @@
 
     <div class="graph-container">
       <p>Price / Day</p>
-      <%= image_tag("graphic.png", size:"265x100") %>
+      <%# <%= image_tag("graphic.png", size:"265x100") %>
+      <div data-slider-target="mySlider"
+      data-min="250"
+      data-max="1750"
+      data-range="2000"
+    ></div>
     </div>
 
     <div class="price-container">
@@ -28,19 +33,6 @@
           <%= f.number_field :start_price, placeholder: "      Min", class: 'price-text-field', value:"250", data: { slider_target: "minValue" } %>
           <%= f.number_field :end_price, placeholder: "      Max", class: 'price-text-field', value:"1750", data: { slider_target: "maxValue" } %>
       </div>
-      <div data-slider-target="mySlider"
-      data-min="250"
-      data-max="1750"
-      data-range="2000"
-    ></div>
-      <%# <div class="slider">
-        <div class="progress"></div>
-        <div class="range-input">
-          <input type="range" class="range-min" min="0" max="1000" value="100" data-action="input->slider#change input->slider#enable">
-          <input type="range" class="range-max" min="0" max="1000" value="900" data-action="input->slider#change input->slider#enable">
-        </div>
-      </div> %>
-
       <div class="book-btn">
       <%= f.submit "Filter", class: 'button-field' %>
       </div>
