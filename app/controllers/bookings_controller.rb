@@ -9,6 +9,9 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize(@booking)
+    #working on this
+    #sleep(10.seconds)
+    #redirect_to users_dashboard_path
   end
 
   def new
@@ -22,6 +25,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize(@booking)
     if @booking.save
+      flash[:notice] = "Booking was submitted!"
       redirect_to booking_path(@booking)
     else
       render :new
