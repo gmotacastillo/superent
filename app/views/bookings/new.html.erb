@@ -8,12 +8,12 @@
 <div class="big-container">
   <!--div below is for the left half of the screen (car info)-->
   <div class="left-car-info-container">
-      <p class="title-car-show-page" >Your reservation</p><br>
+      <p class="title-car-show-page" >The car you are looking for</p><br>
       <div class="car-picture-show-page-infos">
         carpic
       </div><br>
       <p class="text-car-show"><%= @car.model %></p>
-      <p class="text-car-show">$<%= @car.price %></p>
+      <p class="text-car-show">Price: <%= @car.price %> $</p>
       <p class="text-car-show">Available from: <%= @car.start_date %></p>
       <!-- Line below is a test for displaying user uploaded photo of the car -->
       <%#= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>

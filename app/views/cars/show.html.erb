@@ -3,9 +3,14 @@
 <div class="big-container">
 
   <div class="left-car-info-container">
-
-      <p class="title-car-show-page" >Your reservation</p><br>
-       <p class="title-car-show-page" >If you want to book please login</p><br>
+       <!--if current user owns the car then display: This your car-->
+       <% if @car.user == current_user %>
+        <p class="text-car-show" >You are the owner of this car</p><br>
+        <!--if current user doesnt  owns the car then display: Car information-->
+        <% else %>
+        <p class="text-car-show" >The car you are looking for</p><br>
+        <p class="text-car-show" >If you want to book please login</p><br>
+       <% end %>
        <div class="car-picture-show-page-infos">
       carpic
        </div><br>
@@ -13,7 +18,7 @@
       <p class="text-car-show">$<%= @car.price %></p>
       <p class="text-car-show">Available from: <%= @car.start_date %></p>
       <!-- Line below is a test for displaying user uploaded photo of the car -->
-      <%#= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
       <p class="text-car-show">To: <%= @car.end_date %></p>
       <br>
 
@@ -21,11 +26,11 @@
 
       <% if policy(@car).edit? %>
 
-      <%= link_to "Edit car", edit_car_path(@car), class: "btn-show-car-page" %>
+      <%= link_to "Edit car", edit_car_path(@car), class: "btn btn-show-car-page" %>
       <!--delete button is for later-->
       <%= link_to "Delete",
       car_path(@car),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-show-car-page"%>
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-show-car-page"%>
       <% end %>
       <%= link_to "Go back", cars_path, class: "btn btn-show-car-page" %>
       </div>
