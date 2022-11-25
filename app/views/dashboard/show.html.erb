@@ -12,8 +12,10 @@
           <%= car.price %>
           <%= car.start_date %>
           <%= car.end_date %>
+          <!---Add button here to get to the show_car page--->
           <%= car.location %>
           <%= cl_image_tag car.photo.key, height: 100, width: 100, crop: :fill, class:"dash-img"%>
+          <%= link_to "Show car", car_path(car), class: "btn btn-show-car-page" %>
         </section>
         <% end %>
         </div>
@@ -65,8 +67,8 @@
         </div>
         <div class="booking-item-container">
           <p>Change status</p>
-          <%= link_to "Confirm booking", change_status_booking_path(booking, status: 1), data:{turbo_method: :patch} %>
-          <%= link_to "Reject booking", change_status_booking_path(booking, status: 2), data:{turbo_method: :patch} %>
+          <%= link_to "Confirm booking", change_status_booking_path(booking, status: 1), data:{turbo_method: :patch}, class: "btn btn-show-car-page" %>
+          <%= link_to "Reject booking", change_status_booking_path(booking, status: 2), data:{turbo_method: :patch}, class: "btn btn-show-car-page" %>
         </div>
         &nbsp
         </section>
