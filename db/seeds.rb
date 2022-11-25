@@ -8,20 +8,59 @@
 
 require "faker"
 
-user = User.last
+Booking.destroy_all
+Car.destroy_all
+User.destroy_all
+
+user1 = User.create(email:"info1@info.com", encrypted_password: "rkgjbsdalkfbsafkab", password: "123456", first_name: "Stefan", last_name: "Alexandru")
+user2 = User.create(email:"info@info.com", encrypted_password: "rkgjbsdalkfbsafkab", password: "123456", first_name: "Robert", last_name: "Muller")
+user3 = User.create(email:"info3@info.com", encrypted_password: "rkgjbsdalkfbsafkab", password: "123456", first_name: "Mathis", last_name: "Krier")
+user4 = User.create(email:"info4@info.com", encrypted_password: "rkgjbsdalkfbsafkab", password: "123456", first_name: "Gerard", last_name: "Mota")
+user5 = User.create(email:"info5@info.com", encrypted_password: "rkgjbsdalkfbsafkab", password: "123456", first_name: "John", last_name: "Doe")
 
 2.times do
-  Car.create!(model: Faker::Vehicle.manufacture, price: 100, start_date: "28/11/2022", end_date: "02/02/2023", user_id: user.id, location: "Amsterdam", description: Faker::Vehicle.version)
+  file = URI.open('https://res.cloudinary.com/de5zuxdp2/image/upload/v1669371474/yellow_ferrari_myptpm.jpg')
+  ferrari = Car.create!(model: Faker::Vehicle.manufacture, price: 100, start_date: "28/11/2022", end_date: "02/02/2023", user_id: user1.id, location: "Amsterdam", description: Faker::Vehicle.version)
+  ferrari.photo.attach(io: file, filename: 'wii.jpg', content_type: 'image/jpg')
+  ferrari.save!
 end
 
 2.times do
-  Car.create!(model: Faker::Vehicle.manufacture, price: 150, start_date: "01/01/2023", end_date: "02/04/2023", user_id: user.id, location: "London", description: Faker::Vehicle.version)
+  file = URI.open('https://res.cloudinary.com/de5zuxdp2/image/upload/v1669372566/red_supercar_4-t2_wr4ci8.jpg')
+  porsche = Car.create!(model: Faker::Vehicle.manufacture, price: 150, start_date: "01/01/2023", end_date: "02/04/2023", user_id: user2.id, location: "London", description: Faker::Vehicle.version)
+  porsche.photo.attach(io: file, filename: 'wii2.jpg', content_type: 'image/jpg')
+  porsche.save!
 end
 
 2.times do
-  Car.create!(model: Faker::Vehicle.manufacture, price: 150, start_date: "01/01/2023", end_date: "02/04/2023", user_id: user.id, location: "Barcelona", description: Faker::Vehicle.version)
+  file = URI.open('https://res.cloudinary.com/de5zuxdp2/image/upload/v1669372725/lambo_super_vx756k.jpg')
+  lambo = Car.create!(model: Faker::Vehicle.manufacture, price: 150, start_date: "01/01/2023", end_date: "02/04/2023", user_id: user3.id, location: "Barcelona", description: Faker::Vehicle.version)
+  lambo.photo.attach(io: file, filename: 'wii2.jpg', content_type: 'image/jpg')
+  lambo.save!
 end
 
-10.times do
-  Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: rand(1..5), car_id: 4)
+2.times do
+  file = URI.open('https://res.cloudinary.com/de5zuxdp2/image/upload/v1669372857/aston_martin_zrwybd.jpg')
+  mazerati = Car.create!(model: Faker::Vehicle.manufacture, price: 150, start_date: "01/01/2023", end_date: "02/04/2023", user_id: user4.id, location: "Barcelona", description: Faker::Vehicle.version)
+  mazerati.photo.attach(io: file, filename: 'wii3.jpg', content_type: 'image/jpg')
+  mazerati.save!
 end
+
+2.times do
+  file = URI.open('https://res.cloudinary.com/de5zuxdp2/image/upload/v1669372941/Porsche-Supercars-Hypercars_foybkg.jpg')
+  supercar = Car.create!(model: Faker::Vehicle.manufacture, price: 150, start_date: "01/01/2023", end_date: "02/04/2023", user_id: user5.id, location: "Barcelona", description: Faker::Vehicle.version)
+  supercar.photo.attach(io: file, filename: 'wii3.jpg', content_type: 'image/jpg')
+  supercar.save!
+end
+
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user1.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user2.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user3.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user4.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user5.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user1.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user2.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user3.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user4.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user5.id, car_id: Car.last.id)
+Booking.create!(start_date: "25/11/2023", end_date: "25/11/2024", user_id: user1.id, car_id: Car.last.id)
